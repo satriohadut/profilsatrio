@@ -1,0 +1,634 @@
+/* style.css */
+
+/* Reset & Gaya Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variabel warna agar mudah diubah nanti */
+:root {
+    --background-dark: #1a1a1a;
+    --text-light: #f0e6d2;
+    --gold-accent: #d3a625;
+    --border-light: #4d4d4d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lora', serif; /* Font default untuk teks biasa */
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* Kelas bantuan untuk membuat konten di tengah */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+/* style.css */
+
+/* Bagian Beranda (Hero Section) */
+.hero-section {
+    min-height: 100vh; /* Tinggi minimal 1 layar penuh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at top, #4a2d3d, transparent),
+                radial-gradient(ellipse at bottom, #1d1d2b, transparent),
+                #101018; /* Latar belakang gradasi magis */
+    position: relative; /* Diperlukan untuk elemen di dalamnya */
+    overflow: hidden; /* Mencegah elemen keluar batas */
+    padding-top: 100px; /* Memberi ruang dari navigasi */
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Kolom kiri 1 bagian, kanan 2 bagian */
+    align-items: center;
+    gap: 3rem; /* Jarak antar kolom */
+    width: 100%;
+}
+
+/* Kolom Kiri: Profil */
+.profile-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.initials {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: var(--text-light);
+    letter-spacing: 4px;
+}
+
+.house {
+    font-size: 0.9rem;
+    color: #aaa;
+    letter-spacing: 2px;
+}
+
+/* Bingkai Foto Ajaib */
+.photo-frame {
+    width: 250px;
+    height: 280px;
+    border: 15px solid #2a201c;
+    background-color: #1a1a1a;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7), 
+                inset 0 0 10px rgba(211, 166, 37, 0.3); /* Bayangan luar & dalam */
+    border-radius: 5px;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Membuat gambar pas tanpa gepeng */
+}
+
+/* Kolom Kanan: Teks Selamat Datang */
+.welcome-column {
+    font-family: 'Cinzel', serif; /* Font Harry Potter */
+}
+
+.welcome-intro {
+    font-size: 1.8rem;
+    color: #ccc;
+}
+
+.welcome-name {
+    font-size: 3.5rem;
+    color: var(--gold-accent);
+    margin: 0.5rem 0;
+    line-height: 1.2;
+}
+
+.welcome-university {
+    font-family: 'Lora', serif; /* Font biasa untuk sub-judul */
+    font-size: 1.2rem;
+    color: #bbb;
+    font-style: italic;
+}
+
+/* style.css */
+
+/* Gaya Section Umum */
+section {
+    padding: 80px 0; /* Jarak atas-bawah 80px, kiri-kanan 0 */
+    border-bottom: 2px solid var(--border-light); /* Garis pemisah antar section */
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--gold-accent);
+    position: relative; /* Diperlukan untuk garis bawah hiasan */
+}
+
+/* Garis bawah hiasan untuk judul section */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background-color: var(--gold-accent);
+    opacity: 0.5;
+}
+/* style.css */
+
+/* Animasi hover untuk teks perkenalan di Beranda */
+.welcome-column {
+    transition: transform 0.3s ease-in-out;
+}
+
+.welcome-column:hover {
+    transform: scale(1.05); /* Membesar 5% saat disentuh */
+    cursor: pointer;
+}
+
+/* Gaya Khusus Bagian Tentang Saya */
+#tentang {
+    background-color: #242424; /* Warna latar yang sedikit berbeda */
+}
+
+.about-content h3, .about-content h4 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-accent);
+}
+
+.about-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-content h4 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-content ul {
+    list-style: none; /* Menghilangkan bulatan/angka default */
+    padding-left: 0;
+}
+
+.about-content ul li {
+    padding-bottom: 0.5rem;
+}
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Kolom kiri lebih besar dari kolom kanan */
+    gap: 6rem; /* Jarak antar kolom */
+    align-items: center; /* Menyelaraskan item secara vertikal */
+}
+/* style.css */
+
+/* GANTI BLOK KODE INI */
+.about-photo .photo-frame {
+    width: 280px;      /* <--- Beri lebar yang pasti */
+    height: 310px;     /* <--- Beri tinggi yang pasti agar proporsional */
+    max-width: 100%;   /* <--- Ini penting agar tetap responsif di layar kecil */
+    margin: 0 auto;    /* <--- Tetap di tengah kolom */
+}
+/* style.css */
+
+/* ============================================== */
+/* ==== TAMBAHKAN SEMUA KODE DI BAWAH INI ==== */
+/* ============================================== */
+
+/* Navigasi */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px); /* Efek blur transparan */
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex; /* Membuat logo dan menu jadi sejajar horizontal */
+    justify-content: space-between; /* Mendorong logo ke kiri dan menu ke kanan */
+    align-items: center; /* Menyelaraskan secara vertikal di tengah */
+    padding: 1rem 30px;
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: var(--gold-accent);
+    text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.nav-menu {
+    display: flex; /* Membuat item menu jadi sejajar horizontal */
+    list-style: none; /* Menghilangkan bullet points (bulatan) */
+    gap: 2.5rem; /* Memberi jarak antar item menu */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--gold-accent); /* Warna berubah saat kursor menyentuh link */
+}
+/* style.css */
+
+/* Membuat video pas di dalam bingkai foto */
+.photo-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ini penting agar video tidak gepeng/terdistorsi */
+}
+/* style.css */
+
+/* Gaya Bagian Portofolio */
+/* style.css */
+
+/* GANTI KODE .portfolio-grid LAMA DENGAN INI */
+.portfolio-grid {
+    display: grid;
+    grid-auto-flow: column; /* Membuat item berbaris ke samping */
+    grid-auto-columns: 31%; /* Menentukan lebar setiap kolom */
+    gap: 1.5rem;
+    overflow-x: auto; /* Ini yang membuat bisa di-scroll horizontal */
+    padding: 2rem 1rem; /* Memberi sedikit ruang agar bayangan tidak terpotong */
+    /* Menghilangkan scrollbar default */
+    scrollbar-width: none; /* Untuk Firefox */
+    -ms-overflow-style: none;  /* Untuk Internet Explorer 10+ */
+}
+
+/* Menghilangkan scrollbar default untuk Chrome, Safari, Opera */
+.portfolio-grid::-webkit-scrollbar {
+    display: none;
+}
+
+/* Sedikit penyesuaian agar kartu tidak terlalu rapat di layar kecil */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-auto-columns: 80%;
+    }
+}
+
+.portfolio-card {
+    background-color: #2c2c2c;
+    border-radius: 15px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid #444;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(211, 166, 37, 0.2);
+}
+
+.portfolio-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+}
+
+.card-content h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: var(--text-light);
+}
+
+.card-content p {
+    color: #aaa;
+    margin-bottom: 1.5rem;
+}
+
+.card-cta {
+    color: var(--gold-accent);
+    font-weight: bold;
+    font-family: 'Lora', serif;
+}
+
+/* Gaya untuk Pop-up (Modal) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* style.css */
+
+/* GANTI SELURUH BLOK .modal-content YANG LAMA DENGAN INI */
+.modal-content {
+    background-color: #1e1e28;
+    padding: 2.5rem;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    border-top: 5px solid var(--gold-accent);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+
+    /* --- PERUBAHAN UKURAN DI SINI --- */
+    width: 50vw; /* vw = 50% dari lebar viewport/layar */
+    height: 70vh; /* vh = 70% dari tinggi viewport/layar */
+    
+    display: flex; /* Mengaktifkan flexbox untuk penataan konten */
+    flex-direction: column; /* Konten disusun secara vertikal */
+    
+    max-height: 600px; /* Batas tinggi maksimal */
+    overflow-y: auto; /* Tambahkan scroll jika kontennya terlalu panjang */
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+    color: white;
+}
+
+.modal-image-display {
+    width: 100%;
+    max-height: 350px;
+    object-fit: contain;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+#modal-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: var(--gold-accent);
+    margin-bottom: 1rem;
+}
+
+#modal-description {
+    line-height: 1.8;
+    color: var(--text-light);
+}
+/* style.css */
+
+/* Gaya Bagian Pendidikan */
+#pendidikan {
+    background-color: var(--background-dark); /* Warna sama dengan body */
+}
+
+/* Wadah utama timeline */
+.timeline-container {
+    position: relative; /* Ini kunci untuk membuat garis vertikal */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Garis vertikal penghubung (elemen "tali") */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px; /* Posisi garis di sebelah kiri */
+    height: 100%;
+    width: 3px;
+    background-color: var(--border-light);
+}
+
+/* Setiap item/kotak di timeline */
+.timeline-item {
+    position: relative;
+    margin-left: 60px; /* Memberi jarak dari garis */
+    margin-bottom: 50px;
+    background-color: #2c2c2c;
+    border-left: 5px solid var(--gold-accent);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+/* Menghilangkan margin bawah untuk item terakhir */
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Titik penghubung di garis */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 25px; /* Menyelaraskan dengan tengah teks */
+    left: -53px; /* Memposisikan titik tepat di atas garis */
+    height: 20px;
+    width: 20px;
+    background-color: var(--gold-accent);
+    border-radius: 50%; /* Membuatnya menjadi lingkaran */
+    border: 3px solid var(--background-dark);
+}
+
+.timeline-item h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold-accent);
+    font-size: 1.5rem;
+}
+
+.timeline-item .school {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-light);
+}
+
+.timeline-item .years {
+    font-size: 0.9rem;
+    color: #aaa;
+    font-style: italic;
+}
+/* style.css */
+
+/* --- Interaksi Hover untuk Timeline Pendidikan --- */
+
+/* Menambahkan transisi agar animasi terasa halus */
+.timeline-item, 
+.timeline-item::before {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efek saat kursor menyentuh kotak timeline */
+.timeline-item:hover {
+    transform: scale(1.05); /* Kotak membesar 5% */
+    cursor: pointer;
+}
+
+/* Efek pada lingkaran kuning saat kotak di-hover */
+.timeline-item:hover::before {
+    transform: scale(1.2); /* Lingkaran juga ikut membesar */
+    box-shadow: 0 0 15px var(--gold-accent); /* Menambahkan efek bersinar */
+}
+/* style.css */
+
+/* Gaya Bagian Kontak */
+#kontak {
+    background-color: #242424;
+    border-bottom: none; /* Menghilangkan garis di section terakhir */
+}
+
+.contact-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    color: #ccc;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Agar rapi di layar kecil */
+}
+
+.contact-item {
+    background-color: #2c2c2c;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-radius: 50px; /* Membuat bentuk seperti kapsul */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+/* style.css */
+
+.contact-item:hover {
+    background-color: var(--gold-accent); /* Latar jadi emas */
+    color: #1a1a1a; /* <--- PASTIKAN TULISAN JADI HITAM/GELAP */
+    transform: translateY(-5px);
+}
+
+/* style.css */
+
+.contact-icon {
+    width: 24px;   /* Atur lebar ikon */
+    height: 24px;  /* Atur tinggi ikon */
+    object-fit: contain; /* Memastikan logo tidak gepeng */
+}
+
+/* Gaya Bagian Footer */
+.footer {
+    background-color: #111;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+/* style.css */
+
+/* Penataan untuk beberapa tombol di dalam satu kartu */
+.card-triggers {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column; /* Menyusun tombol secara vertikal */
+    gap: 0.5rem; /* Memberi jarak antar tombol */
+}
+/* style.css */
+
+/* --- Efek Partikel Latar Belakang Magis --- */
+
+.background-magic {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent; /* Awalnya transparan */
+    z-index: -1; /* Paling belakang, di bawah semua konten */
+    overflow: hidden; /* Penting agar partikel tidak keluar batas */
+}
+
+/* Membuat partikel-partikel individual */
+.background-magic::before,
+.background-magic::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%; /* Bentuk lingkaran */
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 60%);
+    /* Warna putih transparan, fading ke transparan penuh */
+}
+
+/* Animasi untuk kelompok partikel pertama */
+.background-magic::before {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -50px;
+    animation: moveLight 30s linear infinite alternate; /* Animasi bergerak bolak-balik */
+}
+
+/* Animasi untuk kelompok partikel kedua */
+.background-magic::after {
+    width: 400px;
+    height: 400px;
+    bottom: -100px;
+    right: -100px;
+    animation: moveLight 40s linear infinite alternate-reverse; /* Animasi bergerak terbalik */
+}
+
+/* Definisi animasi gerakan */
+@keyframes moveLight {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translate(30vw, 40vh) scale(1.1); /* Bergerak ke tengah layar */
+        opacity: 0.7;
+    }
+    100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.5;
+    }
+}
